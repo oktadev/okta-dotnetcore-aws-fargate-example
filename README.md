@@ -1,8 +1,6 @@
 # .NET Core + AWS Fargate Example
  
-This example shows how to deploy a .NET Core app to AWS Fargate with Docker.
-
-Please read [Deploy a .NET Container with AWS Fargate](https://developer.okta.com/blog/2020/06/22/deploy-dotnet-container-aws-fargate) to see how this example was created. 
+This example shows how to deploy a .NET Core app to AWS Fargate with Docker. Please read [Deploy a .NET Container with AWS Fargate](https://developer.okta.com/blog/2020/06/22/deploy-dotnet-container-aws-fargate) to see how this example was created. 
 
 **Prerequisites:** 
 
