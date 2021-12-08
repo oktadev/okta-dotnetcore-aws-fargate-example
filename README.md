@@ -1,22 +1,22 @@
 # .NET Core + AWS Fargate Example
- 
-This example shows how to deploy a .NET Core app to AWS Fargate with Docker. Please read [Deploy a .NET Container with AWS Fargate](https://developer.okta.com/blog/2020/06/22/deploy-dotnet-container-aws-fargate) to see how this example was created. 
 
-**Prerequisites:** 
+This example shows how to deploy a .NET Core app to AWS Fargate with Docker. Please read [Deploy a .NET Container with AWS Fargate](https://developer.okta.com/blog/2020/06/22/deploy-dotnet-container-aws-fargate) to see how this example was created.
 
-- [Visual Studio Code or Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-- An [Okta Developer Account](https://developer.okta.com/) (free forever, to handle your OAuth needs)
+**Prerequisites:**
+
+- Basic knowledge of .NET
+- [.NET SDK 3.1](https://docs.microsoft.com/en-in/dotnet/core/install/)
 - [An AWS account (we'll be using a free tier product)](https://aws.amazon.com/free)
-- [AWS Toolkit for Visual Studio](https://aws.amazon.com/visualstudio/)
+- [Okta CLI](https://cli.okta.com)
 - [AWS CLI V2](https://aws.amazon.com/cli/)
-- [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
+- [Docker Desktop for Windows/macOS (Not required if you are on Linux)](https://www.docker.com/get-started)
 
 > [Okta](https://developer.okta.com/) has Authentication and User Management APIs that reduce development time with instant-on, scalable user infrastructure. Okta's intuitive API and expert support make it easy for developers to authenticate, manage and secure users and roles in any application.
 
-* [Getting Started](#getting-started)
-* [Links](#links)
-* [Help](#help)
-* [License](#license)
+- [Getting Started](#getting-started)
+- [Links](#links)
+- [Help](#help)
+- [License](#license)
 
 ## Getting Started
 
@@ -31,11 +31,11 @@ This will get a copy of the project installed locally.
 
 To create a new OIDC app for your .NET Core app on Okta:
 
-1. Log in to your developer account, navigate to **Applications**, and click on **Add Application**.
-2. Select **Web** and click **Next**. 
-3. Give the application a name and click **Done**.
+Install the [Okta CLI](https://cli.okta.com/) and run `okta register` to sign up for a new account. If you already have an account, run `okta login`. Then, run `okta apps create`. Select the default app name, or change it as you see fit. Choose **Web** and press **Enter**.
 
-Open this project up in Visual Studio and open `appsettings.json`. Copy and paste the values from the Okta app you created.
+Select **Other**. Then, change the Redirect URI to `http://localhost:5000/authorization-code/callback` and accept the default Logout Redirect URI of `http://localhost:5000`.
+
+Open this project up in your IDE and open `appsettings.json`. Copy and paste the values from the **.okta.env** file created at the folder where you executed the `okta apps create` command.
 
 ```json
 "OktaSettings": {
@@ -47,7 +47,7 @@ Open this project up in Visual Studio and open `appsettings.json`. Copy and past
 
 **NOTE:** The value of `{yourOktaDomain}` should be something like `dev-123456.okta.com`. Make sure you don't include `-admin` in the value!
 
-At this point, you should be able to build and run your application. 
+At this point, you should be able to build and run your application.
 
 For instructions on how to build a Docker image and deploy this application to AWS Fargate, please read the [blog post](https://developer.okta.com/blog/2020/06/22/deploy-dotnet-container-aws-fargate)!
 
@@ -55,7 +55,7 @@ For instructions on how to build a Docker image and deploy this application to A
 
 This example uses the following open source libraries from Okta:
 
-* [Okta ASP.NET Middleware](https://github.com/okta/okta-aspnet)
+- [Okta ASP.NET Middleware](https://github.com/okta/okta-aspnet)
 
 ## Help
 
