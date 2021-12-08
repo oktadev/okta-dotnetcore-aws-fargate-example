@@ -13,11 +13,6 @@ This example shows how to deploy a .NET Core app to AWS Fargate with Docker. Ple
 
 > [Okta](https://developer.okta.com/) has Authentication and User Management APIs that reduce development time with instant-on, scalable user infrastructure. Okta's intuitive API and expert support make it easy for developers to authenticate, manage and secure users and roles in any application.
 
-- [Getting Started](#getting-started)
-- [Links](#links)
-- [Help](#help)
-- [License](#license)
-
 ## Getting Started
 
 To install this example application, run the following commands:
@@ -35,7 +30,7 @@ Install the [Okta CLI](https://cli.okta.com/) and run `okta register` to sign up
 
 Select **Other**. Then, change the Redirect URI to `http://localhost:5000/authorization-code/callback` and accept the default Logout Redirect URI of `http://localhost:5000`.
 
-Open this project up in your IDE and open `appsettings.json`. Copy and paste the values from the **.okta.env** file created at the folder where you executed the `okta apps create` command.
+Open this project up in your IDE and open **appsettings.json**. Copy and paste the values from the **.okta.env** file created at the folder where you executed the `okta apps create` command.
 
 ```json
 "OktaSettings": {
@@ -45,7 +40,7 @@ Open this project up in your IDE and open `appsettings.json`. Copy and paste the
 }
 ```
 
-**NOTE:** The value of `{yourOktaDomain}` should be something like `dev-123456.okta.com`. Make sure you don't include `-admin` in the value!
+**NOTE:** The value of `{yourOktaDomain}` should be something like `https://dev-123456.okta.com`. Make sure you don't include `-admin` in the value!
 
 At this point, you should be able to build and run your application.
 
