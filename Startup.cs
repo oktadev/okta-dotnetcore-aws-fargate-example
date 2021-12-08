@@ -44,10 +44,10 @@ namespace Okta.Blog.Chat
             .AddOktaMvc(oktaMvcOptions);
 
             services.AddRazorPages()
-                .AddRazorPagesOptions(options =>
-                {
-                    options.Conventions.AuthorizePage("/Chat");
-                });
+            .AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AuthorizePage("/Chat");
+            });
             services.AddSignalR();
         }
 
