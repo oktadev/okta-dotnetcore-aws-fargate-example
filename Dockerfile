@@ -7,6 +7,8 @@ RUN dotnet restore
 ## copy everything else and publish app
 COPY . ./
 RUN dotnet publish -c release -o /app --no-restore
+ARG CERT_PASSWORD
+RUN dotnet dev-certs https -ep /app/aspnetapp.pfx -p ${CERT_PASSWORD}
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:3.1-bullseye-slim AS base
